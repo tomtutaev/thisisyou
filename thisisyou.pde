@@ -312,7 +312,7 @@ void sendJointPosition(int userId)
 }
 
 //OSC message settings
-void sendOSCMessage(String address, float[] values) {
+void sendOSCMessage(String address, float[] values){
   OscMessage msg = new OscMessage(address);
   for (int v=0; v<values.length; v++)
   msg.add(values[v]);
