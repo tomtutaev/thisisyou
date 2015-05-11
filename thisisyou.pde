@@ -42,7 +42,7 @@ void setup(){
  colorMode(HSB, 100);
 
  // display this message if camera is not connected    
-  kinect = new SimpleOpenNI(this);
+  kinect = new SimpleOpenNI(this); 
   if(kinect.isInit() == false){
      println("Can't init SimpleOpenNI, maybe the camera is not connected!");
      exit();
