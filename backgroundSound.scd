@@ -25,4 +25,4 @@ Synth 3 adapted from Nathaniel redfrik's work found at: http://sccode.org/1-4RA/
 Global Reverb (triple super gverb) adapted from rukano's work found at: http://sccode.org/1-4EG
 [Accssesed 12/06/15]
 
-*/
+ */
