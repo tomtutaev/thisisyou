@@ -113,8 +113,6 @@ void draw(){
    
    //draw the skeleton
    drawSkeleton(i); 
-     float  ampstate = 1;
-   sendOSCMessage("/amp/", new float[] {ampstate});
     }
   }
 }
@@ -185,7 +183,11 @@ void drawSkeleton(int userId)
           blob_array[index] = 250;
                    
          // user's fill colour controlled by rightHand position         
-         fill(map((rightHand.x), 0, width, 100, 50), map((rightHand.y), 0, height, 100, 50), 250, 100);
+         //fill(map((rightHand.y), 0, height, 80, 50), map((rightHand.x), 0, width , 160, 50), 250, 100);
+
+         fill(map((rightHand.x), 0, width , 50, 100), map((rightHand.y), 0, height , 50, 100), 220, 100);
+
+
 
          //ellipse settings
          ellipseMode(CENTER);
@@ -199,9 +201,9 @@ void drawSkeleton(int userId)
     }
     
     smooth();
-
+    
     //background fill controlled by leftHand position
-    fill(map(leftHand.y,0,height,50,100), map(leftHand.x,0,width,50,100),250,35);
+    fill(map((leftHand.x), 0, width , 50, 100), map((leftHand.y), 0, height, 50, 100), 68, 25);
 
     //border  
     rect(0,0,width,height);
@@ -244,15 +246,11 @@ void onNewUser(SimpleOpenNI curContext,int userId) {
   println("onNewUser - userId: " + userId);
   println("\tstart tracking skeleton");
   context.startTrackingSkeleton(userId);
-  float  ampstate = 1;
-  sendOSCMessage("/amp/", new float[] {ampstate});
 }
  
 // when a user leaves the field of view 
 void onLostUser(int userId) {
   println("User Lost - userId: " + userId); 
-    float  ampstate = 1;
-    sendOSCMessage("/amp/", new float[] {ampstate});
 }
 
 // when calibration begins
@@ -338,6 +336,5 @@ void onVisibleUser(SimpleOpenNI curkinect, int userId){
 void onLostUser(SimpleOpenNI curkinect, int userId){
   println("onLostUser - userId: " + userId);
 }
-
 
 
