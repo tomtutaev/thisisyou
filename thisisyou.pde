@@ -78,8 +78,8 @@ void setup(){
 
   blob_array = new int[cont_length];
    
-  // Fast frame rate and improve quality of image 
-  frameRate(6000);
+  // kinect maximum frame rate is 30 frames per second 
+  frameRate(30);
 
   smooth();
 
@@ -205,7 +205,9 @@ void drawSkeleton(int userId)
 
     //border  
     rect(0,0,width,height);
-  
+    
+    smooth();
+
     counter = 0;
   }    
     counter += 1; 
